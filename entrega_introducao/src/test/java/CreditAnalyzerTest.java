@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class CreditAnalyzerTest {
 
     @Test public void testAllowedUserHasCreditAvailable() {
-        CreditAnalyzer creditAnalyzer;
+        CreditAnalyzer creditAnalyzer = new CreditAnalyzerImpl();
         String userDocument = "00000000191";
         Integer userScore = 600;
 
@@ -19,7 +19,7 @@ public class CreditAnalyzerTest {
     }
 
     @Test public void testAllowedUserHasNotCreditAvailable() {
-        CreditAnalyzer creditAnalyzer;
+        CreditAnalyzer creditAnalyzer = new CreditAnalyzerImpl();
         String userDocument = "00000000191";
         Integer userScore = 599;
 
