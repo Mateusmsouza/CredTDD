@@ -61,7 +61,7 @@
     100%
   </span>
   <span class="absValue">
-    (4/ 4)
+    (8/ 8)
   </span>
 </td>
 </tr>
@@ -72,24 +72,31 @@
 <br/>
 
 
-<div class="sourceCode"><b class="fc"><i>1</i>&nbsp;public class CreditAnalyzerImpl implements CreditAnalyzer{</b>
-<i>2</i>&nbsp;
+<div class="sourceCode"><i>1</i>&nbsp;import br.com.safeguard.check.SafeguardCheck;
+<i>2</i>&nbsp;import br.com.safeguard.types.ParametroTipo;
 <i>3</i>&nbsp;
-<i>4</i>&nbsp;    @Override
-<i>5</i>&nbsp;    public Boolean validateCreditAvailable(String userDocument, Integer userScore) {
-<b class="fc"><i>6</i>&nbsp;        if (userScore &lt; 600){</b>
-<b class="fc"><i>7</i>&nbsp;            return false;</b>
-<i>8</i>&nbsp;        }
-<i>9</i>&nbsp;
-<b class="fc"><i>10</i>&nbsp;        return true;</b>
-<i>11</i>&nbsp;    }
-<i>12</i>&nbsp;}
+<b class="fc"><i>4</i>&nbsp;public class CreditAnalyzerImpl implements CreditAnalyzer{</b>
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;    @Override
+<i>7</i>&nbsp;    public Boolean validateCreditAvailable(String userDocument, Integer userScore) {
+<b class="fc"><i>8</i>&nbsp;        Boolean creditAvailable = true;</b>
+<b class="fc"><i>9</i>&nbsp;        Boolean validDocument = new SafeguardCheck().elementOf(userDocument, ParametroTipo.CPF_FORMATADO)</b>
+<b class="fc"><i>10</i>&nbsp;                .validate()</b>
+<b class="fc"><i>11</i>&nbsp;                .hasError();</b>
+<i>12</i>&nbsp;
+<b class="fc"><i>13</i>&nbsp;        if (userScore &lt; 600) {</b>
+<b class="fc"><i>14</i>&nbsp;            creditAvailable = false;</b>
+<i>15</i>&nbsp;        }
+<i>16</i>&nbsp;
+<b class="fc"><i>17</i>&nbsp;        return creditAvailable &amp;&amp; validDocument;</b>
+<i>18</i>&nbsp;    }
+<i>19</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-09-17 21:38</div>
+    <div style="float:right;">generated on 2020-09-17 21:52</div>
 </div>
 </body>
 </html>
