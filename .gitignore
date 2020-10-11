@@ -107,3 +107,5 @@ Temporary Items
 entrega_introducao/gradle/wrapper/gradle-wrapper.properties
 .idea
 entrega_introducao/build
+
+entrega_introducao/entregas_testes_funcionais/particoes_de_equivalencia/build
