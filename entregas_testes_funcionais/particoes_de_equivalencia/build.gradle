@@ -22,6 +22,7 @@ repositories {
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     compile 'com.google.guava:guava:23.0'
+    compile group: 'com.github.gilmardeveloper', name: 'safeguard', version: '0.0.1-RELEASE'
 
     // Use JUnit test framework
     testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')

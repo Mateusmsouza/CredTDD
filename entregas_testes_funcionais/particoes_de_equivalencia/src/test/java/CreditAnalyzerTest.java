@@ -23,7 +23,7 @@ public class CreditAnalyzerTest {
 
     @Test
     public void testUserHasCreditAvailableWhenPositiveScore() {
-        CreditAnalyzer creditAnalyzer = CreditAnalyzer;
+        CreditAnalyzer creditAnalyzer = new CreditAnalyzerImpl();
         String userDocument = "00000000191";
         Integer userScore = 600;
 
@@ -33,7 +33,7 @@ public class CreditAnalyzerTest {
 
     @Test
     public void testUserHasNotCreditAvailableWhenInvalidLowScore() {
-        CreditAnalyzer creditAnalyzer = CreditAnalyzer;
+        CreditAnalyzer creditAnalyzer = new CreditAnalyzerImpl();
         String userDocument = "00000000191";
         Integer userScore = -1;
 
@@ -43,7 +43,7 @@ public class CreditAnalyzerTest {
 
     @Test
     public void testUserHasNotCreditAvailableWhenInvalidHighScore() {
-        CreditAnalyzer creditAnalyzer = CreditAnalyzer;
+        CreditAnalyzer creditAnalyzer = new CreditAnalyzerImpl();
         String userDocument = "00000000191";
         Integer userScore = 1001;
 
@@ -53,7 +53,7 @@ public class CreditAnalyzerTest {
 
     @Test
     public void testUserHasCreditAvailableWhenValidDocument() {
-        CreditAnalyzer creditAnalyzer = CreditAnalyzer;
+        CreditAnalyzer creditAnalyzer = new CreditAnalyzerImpl();
         String userDocument = "45437925050";
         Integer userScore = 750;
 
@@ -63,7 +63,7 @@ public class CreditAnalyzerTest {
 
     @Test
     public void testUserHasNotCreditAvailableWhenInvalidDocumentDigits() {
-        CreditAnalyzer creditAnalyzer = CreditAnalyzer;
+        CreditAnalyzer creditAnalyzer = new CreditAnalyzerImpl();
         String userDocument = "00003211191";
         Integer userScore = 750;
 
@@ -73,7 +73,7 @@ public class CreditAnalyzerTest {
 
     @Test
     public void testUserHasNotCreditAvailableWhenInvalidDocumentNotDigitsOnly() {
-        CreditAnalyzer creditAnalyzer = CreditAnalyzer;
+        CreditAnalyzer creditAnalyzer = new CreditAnalyzerImpl();
         String userDocument = "0000aa00191";
         Integer userScore = 750;
 
@@ -83,7 +83,7 @@ public class CreditAnalyzerTest {
 
     @Test
     public void testUserHasNotCreditAvailableWhenInvalidDocumentWrongLength() {
-        CreditAnalyzer creditAnalyzer = CreditAnalyzer;
+        CreditAnalyzer creditAnalyzer = new CreditAnalyzerImpl();
         String userDocument = "000000191";
         Integer userScore = 750;
 
