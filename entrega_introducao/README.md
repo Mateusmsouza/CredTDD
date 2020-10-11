@@ -10,3 +10,5 @@
 
 - Os arquivos de testes ficam no diretório: 
 `entrega_introducao/src/test/java`
+
+Link do vídeo: https://youtu.be/wB8M0Ty6M44
